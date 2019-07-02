@@ -8,3 +8,4 @@ int main(void)
         printf("%d",a*b);
     return 0;
 }
+

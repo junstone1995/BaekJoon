@@ -8,6 +8,6 @@ int main(void)
     for(i=0;i<cnt;i++)
         {scanf("%s",word);
         for(j=0; j<sizeof(word);j++)
-            dfdf
+             scanf("%s",av)
         }
 }

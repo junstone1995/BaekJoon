@@ -21,3 +21,4 @@ int	main(void)
 	delete[] prime;
 	return (0);
 }
+d

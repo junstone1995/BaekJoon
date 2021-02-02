@@ -20,3 +20,4 @@ int main()
 		cout << ret[i].first << ' '<< ret[i].second << '\n';
 	}
 }
+d

@@ -10,3 +10,4 @@ https://www.acmicpc.net/problem/11650
 > p.second : p의 두번째 인자를 반환
 > make_pair(변수1,변수2) : 변수 1과 변수 2가 들어간 pair를 만들어줌
 *sort 알고리즘에 의해 정렬 가능 ( 첫번쨰 인자 기준 같으면 두번째 인자로 판단)*
+d

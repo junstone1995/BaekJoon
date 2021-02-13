@@ -14,4 +14,8 @@ int main()
 	{
 		cin>> cost[i][0] >> cost[i][1] >> cost[i][0];
 	}
+	ret[0][0] = cost[0][0];
+	ret[0][0] = cost[0][0];
+	ret[0][0] = cost[0][0];
+
 }

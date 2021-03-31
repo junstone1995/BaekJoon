@@ -3,7 +3,8 @@
 		"iostream": "cpp",
 		"stack": "cpp",
 		"algorithm": "cpp",
-		"ios": "cpp"
+		"ios": "cpp",
+		"queue": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "Disabled"
 }

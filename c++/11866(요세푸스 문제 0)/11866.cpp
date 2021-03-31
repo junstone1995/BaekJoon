@@ -26,7 +26,7 @@ int main()
 		q.pop();
 
 		if(!q.empty())
-			cout << ".";
+			cout << ", ";
 	}
 	cout << ">\n";
 }

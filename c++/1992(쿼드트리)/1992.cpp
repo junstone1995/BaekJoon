@@ -1,40 +1,45 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int n;
-int map[64][64];
+char map[64][64];
 string str;
 
-int solve(int y,int x,int len)
+void solve(int y,int x,int len)
 {
-	int check = 0;
-	for(int i = y; i < y + size; i++)
-		for(int j = x; j < x + size; j++)
-			if(map[y][x])
-				check++;
-	if(!check)
-		str += 0;
-	else if(check == len * len)
-		str += 1;
-	else
-	{
-		cout << "(";
-		solve(y,x,len / 2);
-		solve(y, x + len , len /2);
-		solve(y + len / 2, x, len / 2);
-		solve(y + len / 2, x + len /2 , len / 2):
-		cout << ")";
-		return;
-	}
+    char check = map[y][x];
+    for(int i = y; i < y + len; i++)
+        for(int j = x; j < x + len; j++)
+        {
+            if (check != map[i][j])
+            {
+                str += '(';
+                solve(y,x,len / 2);
+                solve(y, x + len /2 , len /2);
+                solve(y + len / 2, x, len / 2);
+                solve(y + len / 2, x + len /2 , len / 2);
+                str += ')';
+                return ;
+            }
+        }
+    if(check == '1')
+        str +='1';
+    else
+        str +='0';
 }
 
 int main()
 {
-	cin >> n;
-	for(int i = 0 ; i < n ; i++)
-		for(int j = 0 ; j < n ; j++)
-			cin >> map[i][j];
-	solve(0,0,n);
-	cout << str << '\n';
+    cin >> n;
+    for(int i = 0 ; i < n ; i++)
+    {
+        cin >> str;
+        for(int j = 0 ; j < str.length(); j++)
+            map[i][j] = str[j];
+    }
+    str = "";
+    solve(0,0,n);
+    cout << str << '\n';
 }

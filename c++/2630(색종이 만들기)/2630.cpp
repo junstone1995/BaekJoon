@@ -34,9 +34,7 @@ int main()
 	for(int i = 0 ; i < n ; i++)
 		for(int j = 0 ; j < n ; j++)
 		{
-			int num;
-			cin >> num;
-			map[i][j] = num;
+			cin >> map[i][j];
 		}
 	solve(0,0,n);
 	cout << wcnt << '\n';

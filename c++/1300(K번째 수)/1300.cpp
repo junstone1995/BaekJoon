@@ -12,7 +12,7 @@ int main()
 	{
 		long long cnt = 0;
 		int mid = (left + right) / 2;
-		for(int i = 1; i< n; i++)
+		for(int i = 1; i <= n; i++)
 			cnt += min(mid / i ,n);
 		if(cnt < k)
 			left = mid + 1;

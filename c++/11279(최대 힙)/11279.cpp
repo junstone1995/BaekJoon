@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <functional>
 
 using namespace std;
 
@@ -8,7 +9,7 @@ int main()
 	cin.tie(0);
 	cin.sync_with_stdio(0);
 	int n;
-	priority_queue<int> pq;
+	priority_queue<int, vector<int>, greater<int>> pq;
 	cin >> n;
 	while(n--)
 	{

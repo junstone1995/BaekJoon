@@ -16,7 +16,7 @@ int box[MAX][MAX][MAX];
 
 int		inside(int nx,int ny,int nz)
 {
-	if ( nx < m && ny < n && nz < h && 0 <= nx && 0 <= ny && 0 <= nz)
+	if ( nx < m && ny < n && nz < h &&0 <= nx && 0 <= ny && 0 <= nz)
         return (1);
 	return (0);
 }
@@ -57,7 +57,7 @@ int main()
 				int num;
 				cin >> num;
 				box[z][y][x] = num;
-				if (box[z][y][x] == 1)
+				if (num == 1)
 					q.push(make_tuple(z,y,x));
 			}
 		}
@@ -78,6 +78,6 @@ int main()
 				ret = box[z][y][x];
 			}
 		}
+		cout << ret - 1 << '\n';
 	}
-	cout << ret - 1 << '\n';
 }

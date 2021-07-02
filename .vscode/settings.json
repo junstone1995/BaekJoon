@@ -5,7 +5,8 @@
 		"algorithm": "cpp",
 		"ios": "cpp",
 		"queue": "cpp",
-		"string": "cpp"
+		"string": "cpp",
+		"vector": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "Disabled"
 }

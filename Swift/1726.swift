@@ -82,9 +82,10 @@ func solution() -> Int{
 
     var q:[(Int,Int,Int,Int)] = []
     q.append((sx, sy, sd, 0))
-
+    var idx = 0
     while !q.isEmpty{
-        let arr = q.removeFirst()
+        let arr = q[idx]
+        idx += 1
         let x = arr.0
         let y = arr.1
         var d = arr.2
@@ -94,17 +95,20 @@ func solution() -> Int{
         }
 
         for i in 1...3{
-            if isValidGo(x,y,d,i){
-                var nx = x + dx[d] * i
-                var ny = y + dy[d] * i
+            var nx = x + dx[d] * i
+            var ny = y + dy[d] * i
 
-                if check[nx][ny][d]{
-                    continue
-                }
-                if check[nx][ny][d] == false{
-                    check[nx][ny][d] == true
-                    q.append((nx,ny,d,cnt + 1))
-                }
+            if nx < 0 || ny < 0 || nx >= m || ny >= n || map[nx][ny] == 1{
+                break
+            }
+
+            if check[nx][ny][d] == true{
+                continue
+            }
+
+            if check[nx][ny][d] == false{
+                check[nx][ny][d] == true
+                q.append((nx,ny,d,cnt + 1))
             }
         }
 
@@ -145,27 +149,6 @@ func turn(_ direction: Int, _ c: String) -> Int{
         }
     }
     return 0
-}
-
-func isValidGo(_ x:Int, _ y:Int, _ d:Int, _ k:Int) -> Bool{
-    var nx = x + dx[d] * k
-    var ny = y + dy[d] * k
-
-    if nx < 0 || ny < 0 || nx >= m || ny >= n{
-        return false
-    }
-    nx = x
-    ny = y
-
-    for _ in 0..<k{
-        nx = nx + dx[d]
-        ny = ny + dy[d]
-
-        if map[nx][ny] == 1{
-            return false
-        }
-    }
-    return true
 }
 
 print(solution())
